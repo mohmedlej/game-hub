@@ -1,10 +1,10 @@
 import "./App.css";
+import { Button, ButtonGroup } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <h1 className="text-center">Hello World!</h1>
-      <p className="text-center">Empty React template.</p>
+      <Button colorScheme="blue">Button</Button>
     </>
   );
 }
