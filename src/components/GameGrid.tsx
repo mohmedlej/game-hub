@@ -3,17 +3,10 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenres";
-import { Platform } from "../hooks/usePlatforms";
+import { GameQuery } from "../App";
 
-const GameGrid = ({
-  selectedGenre,
-  selectedPlatform,
-}: {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
-}) => {
-  const { data: games, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+const GameGrid = ({ gameQuery }: { gameQuery: GameQuery }) => {
+  const { data: games, error, isLoading } = useGames(gameQuery);
   const skeletons: number[] = Array.from({ length: 20 }, (_, index) => index);
 
   return (
