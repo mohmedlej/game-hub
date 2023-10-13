@@ -6,9 +6,7 @@ import SearchInput from "./SearchInput";
 function Navbar({ onSearch, onReset }: { onSearch: (searchText: string) => void; onReset: () => void }) {
   return (
     <HStack justifyContent={"space-between"} padding={"10px"}>
-      <Button variant={"unstyled"} boxSize={"60px"} padding={0} onClick={() => onReset()}>
-        <Image src={logo} />
-      </Button>
+      {<Image src={logo} boxSize={"60px"} onClick={() => onReset()} cursor={"pointer"} />}
       <SearchInput onSearch={onSearch} />
       <ColormodeSwitch />
     </HStack>
