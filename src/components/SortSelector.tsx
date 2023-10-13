@@ -4,7 +4,7 @@ import { BsChevronDown } from "react-icons/bs";
 const SortSelector = () => {
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />} marginY={2}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         Sort by:
       </MenuButton>
       <MenuList>
