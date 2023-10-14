@@ -1,4 +1,4 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show, useColorMode } from "@chakra-ui/react";
 import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
@@ -19,6 +19,7 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const { toggleColorMode, colorMode } = useColorMode();
 
   return (
     <Grid
@@ -30,11 +31,14 @@ function App() {
         base: "1fr",
         lg: "200px 1fr",
       }}
+      bg={colorMode === "light" ? "#f9f9f9" : "#121212"}
     >
       <GridItem area={"nav"}>
         <Navbar
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
           onReset={() => setGameQuery({} as GameQuery)}
+          onToggleColorMode={toggleColorMode}
+          colorMode={colorMode}
         />
       </GridItem>
       <Show above="lg">

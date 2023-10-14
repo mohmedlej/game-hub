@@ -3,12 +3,22 @@ import logo from "../assets/logo.webp";
 import ColormodeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-function Navbar({ onSearch, onReset }: { onSearch: (searchText: string) => void; onReset: () => void }) {
+function Navbar({
+  onSearch,
+  onReset,
+  onToggleColorMode,
+  colorMode,
+}: {
+  onSearch: (searchText: string) => void;
+  onReset: () => void;
+  onToggleColorMode: () => void;
+  colorMode: string;
+}) {
   return (
     <HStack justifyContent={"space-between"} padding={"10px"}>
       {<Image src={logo} boxSize={"60px"} onClick={() => onReset()} cursor={"pointer"} />}
       <SearchInput onSearch={onSearch} />
-      <ColormodeSwitch />
+      <ColormodeSwitch onToggleColorMode={() => onToggleColorMode()} colorMode={colorMode} />
     </HStack>
   );
 }
