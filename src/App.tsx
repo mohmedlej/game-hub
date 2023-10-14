@@ -31,7 +31,7 @@ function App() {
         base: "1fr",
         lg: "200px 1fr",
       }}
-      bg={colorMode === "light" ? "#f9f9f9" : "#121212"}
+      bg={colorMode === "light" ? "gray.50" : "gray.800"}
     >
       <GridItem area={"nav"}>
         <Navbar
